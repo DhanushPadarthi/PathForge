@@ -6,28 +6,28 @@
 ---
 
 ## 1. Purpose of the Product
-The purpose of PathForge is to help students and fresh graduates achieve their career goals by providing a personalized, AI-driven learning roadmap based on their resume, existing skills, learning time, and chosen career path.
+The purpose of PathForge is to help students and fresh graduates build career-ready skills through a personalized, AI-driven learning roadmap, tailored to their current skill level, learning time, and career goal.
 
-The platform guides users step by step using relevant learning resources, tracks progress visually, and avoids unnecessary content through skip options.
+The platform supports both students **with a resume** and **without a resume**, ensuring accessibility for all learners.
 
 ---
 
 ## 2. Problem Statement
-Students and fresh graduates often know their career goals but lack a clear, personalized learning path to achieve them. Existing platforms provide generic courses, do not consider a user's current skills, and fail to track real learning progress. This leads to confusion, wasted time, and incomplete preparation for jobs.
+Many students know their career goals but lack a clear and personalized path to achieve them. Existing platforms provide generic learning content, ignore a student's current skills, and fail to track actual progress. This leads to confusion, inefficiency, and incomplete career preparation.
 
-There is a need for a system that understands a user's resume, identifies skill gaps, provides relevant learning resources, and tracks progress in a structured and adaptive way.
+There is a need for a platform that **understands a learner's background**, identifies skill gaps, provides relevant resources, and tracks progress in a structured manner.
 
 ---
 
 ## 3. Solution Overview
-PathForge is an AI-powered personalized learning and career roadmap platform that:
-- Analyzes a user's resume using AI
-- Identifies skill gaps for a selected career role
-- Generates a time-based learning roadmap
-- Recommends learning resources (links)
-- Tracks progress with a progress bar
-- Allows users to skip already known topics
-- Helps users become job-ready efficiently
+PathForge is an AI-powered learning platform that:
+- Analyzes a user's **resume** or **basic inputs**
+- Identifies skill gaps for a chosen career role
+- Generates a **deadline-based learning roadmap**
+- Recommends curated learning resources
+- Tracks progress visually
+- Allows users to skip known topics
+- Summarizes completed learning modules
 
 ---
 
@@ -36,109 +36,115 @@ PathForge is an AI-powered personalized learning and career roadmap platform tha
 ### Primary Users
 - College students
 - Fresh graduates
-- Career switchers
 
 ### Secondary Users
 - Platform administrators
-- Training institutions (future scope)
 
 ---
 
-## 5. Key Objectives
-1. Provide personalized learning paths instead of generic courses
-2. Reduce confusion through structured roadmaps
-3. Optimize learning based on available daily time
-4. Track real learning progress visually
-5. Improve job readiness effectively
+## 5. User Entry Flow
+
+### 5.1 Student With Resume
+1. Upload resume (PDF/DOCX)
+2. AI extracts skills and experience
+3. Personalized roadmap generated
+
+### 5.2 Student Without Resume
+1. Answer limited basic questions
+2. AI builds a base skill profile
+3. Personalized roadmap generated
 
 ---
 
-## 6. User Roles
+## 6. Core Objectives (5-Day Scope)
+1. Provide personalized learning roadmaps
+2. Support users with or without resumes
+3. Identify skill gaps using AI
+4. Deliver time-based learning resources
+5. Track learning progress clearly
 
-### 6.1 Student / Client
-- Upload resume
+---
+
+## 7. User Roles
+
+### 7.1 Student
+- Upload resume or answer questions
 - Select career goal and learning time
-- Follow personalized roadmap
+- Follow roadmap
 - Complete or skip resources
 - Track progress
 
-### 6.2 Admin
+### 7.2 Admin
 - Manage users
-- Manage career roles and skills
+- Manage career roles
 - Manage learning resources
-- Monitor platform analytics
 
 ---
 
-## 7. Functional Requirements
+## 8. Functional Requirements (CORE ONLY)
 
-### 7.1 Authentication
-- Secure login using Email / Google
-- Role-based access (User / Admin)
-- Authentication handled by Firebase
+### 8.1 Authentication
+- Secure login (Email / Google)
+- Role-based access (Student / Admin)
 
-### 7.2 Resume Upload & Processing
+### 8.2 Resume Upload & Processing
 - Upload resume (PDF/DOCX)
-- Resume stored securely
-- Backend extracts text using Python
+- Backend extracts resume text using Python
+- AI extracts skills and experience
 
-### 7.3 AI Resume Analysis
-- Extract skills, education, and experience using ChatGPT API
-- Store parsed data for further processing
-
-### 7.4 Career Goal & Learning Time Selection
-- User selects target career role
-- User selects daily learning time (30 min / 1 hr / 2 hrs)
-
-### 7.5 Skill Gap Analysis
-- Compare user skills with required role skills
+### 8.3 Skill Gap Analysis
+- Compare current skills with required role skills
 - Identify missing skills using AI
 
-### 7.6 Personalized Roadmap Generation
-- AI generates a step-by-step roadmap
-- Roadmap aligned with learning time and skill gaps
+### 8.4 Deadline-Based Roadmap Generation
+- Generate step-by-step roadmap
+- Roadmap aligned with user's learning time
+- Clear milestones
 
-### 7.7 Resource Recommendation
+### 8.5 Resource Recommendation
 - AI recommends learning resources (external links)
 - Each resource includes:
   - Title
   - Link
-  - Estimated time
+  - Estimated learning time
 
-### 7.8 Learning Flow (NextWave-style)
-- Sequential unlocking of resources
-- User options:
-  - Complete resource
-  - Skip resource (already known)
-- Automatic unlock of next resource
+### 8.6 Learning Flow
+- Resources unlocked sequentially
+- User actions:
+  - ✅ Complete resource
+  - ⏭️ Skip resource (already known)
 
-### 7.9 Progress Tracking
-- Progress bar updates on completion/skip
-- Completion percentage stored in real time
+### 8.7 Progress Tracking
+- Visual progress bar
+- Progress updates in real time
+- Completion percentage shown
 
-### 7.10 User Dashboard
-- View roadmap and resources
-- Track progress visually
-- See next recommended step
-
-### 7.11 Admin Panel
-- View and manage users
-- Add/update career roles
-- Update skill requirements
-- Review learning resources
+### 8.8 Completed Module Summary
+- Summary generated after each module
+- Shows:
+  - Skills covered
+  - Time spent
+  - Completion status
 
 ---
 
-## 8. Non-Functional Requirements
+## 9. Admin Panel (Simple)
+- View users
+- Add/edit career roles
+- Add/edit learning resources
+- View basic progress statistics
+
+---
+
+## 10. Non-Functional Requirements
 - Secure data handling
 - Scalable architecture
+- Responsive UI
 - Fast response time
-- Mobile-responsive UI
-- High availability
 
 ---
 
-## 9. Technology Stack (FINAL)
+## 11. Technology Stack (FINAL)
 
 ### Frontend
 - React.js / Next.js
@@ -150,11 +156,10 @@ PathForge is an AI-powered personalized learning and career roadmap platform tha
 
 ### Backend
 - Python – FastAPI
-- Resume extraction libraries (PDF/DOCX)
-- API orchestration
+- Resume extraction libraries
 
 ### Database
-- MongoDB Atlas (Free Tier)
+- MongoDB Atlas
 
 ### File Storage
 - Firebase Storage
@@ -164,48 +169,41 @@ PathForge is an AI-powered personalized learning and career roadmap platform tha
 
 ---
 
-## 10. System Architecture Summary
-PathForge uses a hybrid architecture where the frontend communicates with a Python FastAPI backend. Firebase handles authentication and resume storage, MongoDB stores application data, and ChatGPT API provides AI-driven resume analysis, skill gap detection, roadmap creation, and resource recommendations.
+## 12. System Architecture Summary
+PathForge uses a **hybrid architecture** where a React frontend communicates with a Python FastAPI backend. Firebase handles authentication and file storage, MongoDB stores application data, and ChatGPT API provides AI-driven intelligence for skill analysis, roadmap creation, and resource recommendations.
 
 ---
 
-## 11. User Flow Summary
-User logs in → uploads resume → AI extracts skills → user selects career goal & learning time → skill gaps identified → roadmap & resources generated → user completes or skips resources → progress tracked → job-ready user.
+## 13. User Flow Summary
+User logs in → uploads resume or answers questions → AI analyzes skills → skill gaps identified → deadline-based roadmap generated → resources unlocked sequentially → user completes or skips → progress tracked → module summary shown.
 
 ---
 
-## 12. Security & Privacy
-- Firebase Authentication for secure login
-- API keys stored securely in backend environment variables
-- Resume files stored securely
-- Role-based access control
+## 14. Advanced Features (Future Scope)
+The following features are planned after the core system is stable:
 
----
+### AI Mentor Chatbot
+- Acts as a virtual mentor
+- Keeps users on track and motivated
 
-## 13. Assumptions & Constraints
-- Internet access required
-- AI outputs depend on resume quality
-- Free-tier services may have usage limits
+### AI Project Generator
+- Generates project ideas aligned with roadmap
+- Helps build resume-ready projects
 
----
+### Trending Skills Analyzer
+- Shows in-demand skills for selected career role
 
-## 14. Future Enhancements
-- Mock interviews
-- Mentor guidance
-- Placement tracking
-- Mobile application
-- Certification on completion
-- Advanced analytics
+*These features are intentionally kept as advanced enhancements to ensure quality and feasibility within the initial development timeline.*
 
 ---
 
 ## 15. Success Metrics
-- User activation rate
+- User onboarding completion rate
 - Roadmap completion rate
 - Learning consistency
-- User feedback and satisfaction
+- User feedback
 
 ---
 
 ## 16. Final Summary
-PathForge is a scalable, AI-powered learning platform that provides personalized career roadmaps, curated learning resources, and real-time progress tracking using a modern hybrid architecture with Python backend, MongoDB, Firebase services, and ChatGPT API.
+PathForge is a focused, AI-powered learning platform that delivers **personalized, deadline-based career roadmaps** with progress tracking and intelligent resource recommendations. The initial version prioritizes core learning outcomes, with advanced AI features planned for future expansion.
