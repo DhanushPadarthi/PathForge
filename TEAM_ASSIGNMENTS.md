@@ -26,7 +26,7 @@
 
 ## File Assignments
 
-### 🔧 Dhanush (Lead) - Backend Development & Integration
+### 🔧 Dhanush - Backend Development & Integration
 **Branch:** `dhanush`  
 **Team:** Backend
 
