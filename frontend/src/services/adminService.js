@@ -1,0 +1,11 @@
+// Admin service
+// getAllUsers()
+// getUser(userId)
+// deleteUser(userId)
+// getStatistics()
+// addCareerRole(roleData)
+// updateCareerRole(roleId, roleData)
+// deleteCareerRole(roleId)
+// addResource(resourceData)
+// updateResource(resourceId, resourceData)
+// deleteResource(resourceId)
