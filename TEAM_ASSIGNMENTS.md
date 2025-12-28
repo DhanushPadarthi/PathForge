@@ -60,6 +60,51 @@ All placeholder files have been created. Each team member must implement the log
 - `passlib[bcrypt]` (password hashing)
 - `python-jose` (JWT tokens)
 
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout dhanush
+
+# Setup Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+# Create .env file
+copy .env.example .env
+# Now edit .env and add your MongoDB URI, Firebase credentials, etc.
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout dhanush
+git pull origin main
+
+# Work on your files...
+# (backend/app/main.py, config/settings.py, config/mongodb.py, etc.)
+
+# After completing a feature
+git add .
+git commit -m "Implemented FastAPI setup with MongoDB connection"
+git push origin dhanush
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added FastAPI app initialization with CORS"
+git commit -m "Configured MongoDB connection with Motor"
+git commit -m "Implemented JWT authentication and user login"
+git commit -m "Created user registration endpoint"
+```
+
 ---
 
 ### 2️⃣ Varun - Resume Processing & Skill Analysis
@@ -96,6 +141,51 @@ All placeholder files have been created. Each team member must implement the log
 - `python-docx` (DOCX parsing)
 - `firebase-admin` (file storage)
 - `python-multipart` (file uploads)
+
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout varun
+
+# Setup Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+# Create .env file
+copy .env.example .env
+# Edit .env and add Firebase credentials for file storage
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout varun
+git pull origin main
+
+# Work on your files...
+# (backend/app/api/routes/resume.py, services/resume_parser.py, etc.)
+
+# After completing a feature
+git add .
+git commit -m "Implemented resume PDF parser with PyPDF2"
+git push origin varun
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added resume upload endpoint with Firebase Storage"
+git commit -m "Implemented PDF text extraction using PyPDF2"
+git commit -m "Created skill gap analysis algorithm"
+git commit -m "Added questionnaire processing for users without resume"
+```
 
 ---
 
@@ -134,6 +224,51 @@ All placeholder files have been created. Each team member must implement the log
 #### 📚 Libraries to Use:
 - `openai` (ChatGPT API)
 - `pydantic` (data validation)
+
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout varsha
+
+# Setup Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+# Create .env file
+copy .env.example .env
+# Edit .env and add OpenAI API key (OPENAI_API_KEY=sk-...)
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout varsha
+git pull origin main
+
+# Work on your files...
+# (backend/app/services/ai_service.py, services/roadmap_generator.py, etc.)
+
+# After completing a feature
+git add .
+git commit -m "Integrated ChatGPT API for skill extraction"
+git push origin varsha
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added OpenAI ChatGPT integration service"
+git commit -m "Implemented AI-powered roadmap generation"
+git commit -m "Created deadline-based learning modules"
+git commit -m "Added roadmap CRUD endpoints"
+```
 
 ---
 
@@ -193,6 +328,51 @@ All placeholder files have been created. Each team member must implement the log
 - `datetime` (time tracking)
 - `pymongo` (database queries)
 
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout mrinaliny
+
+# Setup Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+# Create .env file
+copy .env.example .env
+# Edit .env and add OpenAI API key and MongoDB URI
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout mrinaliny
+git pull origin main
+
+# Work on your files...
+# (backend/app/api/routes/resources.py, progress.py, admin.py, etc.)
+
+# After completing a feature
+git add .
+git commit -m "Implemented progress tracking with completion percentage"
+git push origin mrinaliny
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added AI-powered resource recommendation endpoint"
+git commit -m "Implemented progress tracking with time spent calculation"
+git commit -m "Created admin panel for user management"
+git commit -m "Added platform statistics dashboard"
+```
+
 ---
 
 ### 5️⃣ Varshareddy - Presentation & Documentation
@@ -232,6 +412,41 @@ All placeholder files have been created. Each team member must implement the log
 3. API documentation
 4. Demo script and talking points
 5. Sample data for demonstration
+
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout varshareddy
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout varshareddy
+git pull origin main
+
+# Work on your presentation and documentation...
+# (Create PPT, update README.md, write API docs, etc.)
+
+# After completing work
+git add .
+git commit -m "Created presentation deck with 15 slides"
+git push origin varshareddy
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added problem statement and solution slides"
+git commit -m "Created system architecture diagram"
+git commit -m "Updated README with setup instructions"
+git commit -m "Prepared demo script and talking points"
+```
 
 ---
 
