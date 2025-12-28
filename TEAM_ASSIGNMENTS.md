@@ -1486,11 +1486,11 @@ git push origin main
 **Team:** Backend
 
 #### Your Files:
-- `backend/routes/roadmap.py` - Roadmap generation and retrieval endpoints
-- `backend/routes/resources.py` - Learning resources management endpoints
-- `backend/routes/admin.py` - Admin panel endpoints
-- `backend/services/chatgpt_service.py` - OpenAI/ChatGPT API integration
-- `backend/services/roadmap_service.py` - Roadmap generation business logic
+- `backend/app/api/routes/roadmap.py` - Roadmap generation and retrieval endpoints
+- `backend/app/api/routes/resources.py` - Learning resources management endpoints
+- `backend/app/api/routes/admin.py` - Admin panel endpoints
+- `backend/app/services/ai_service.py` - OpenAI/ChatGPT API integration
+- `backend/app/services/roadmap_generator.py` - Roadmap generation business logic
 - `backend/requirements.txt` - Python dependencies
 
 #### Key Responsibilities:
@@ -1543,11 +1543,12 @@ git push origin varun
 **Team:** Backend
 
 #### Your Files:
-- `backend/routes/auth.py` - Authentication endpoints (Email/Google OAuth)
-- `backend/routes/user.py` - User profile management endpoints
-- `backend/services/auth_service.py` - Firebase authentication logic
-- `backend/services/user_service.py` - User management business logic
-- `backend/middleware/auth_middleware.py` - Authentication middleware
+- `backend/app/api/routes/auth.py` - Authentication endpoints (Email/Google OAuth)
+- `backend/app/api/routes/resume.py` - Resume upload and parsing endpoints
+- `backend/app/api/routes/skill_analysis.py` - Skill analysis endpoints
+- `backend/app/services/resume_parser.py` - Resume parsing logic (PDF/DOCX)
+- `backend/app/services/skill_analyzer.py` - Skill extraction and analysis
+- `backend/app/core/dependencies.py` - Authentication middleware and dependencies
 
 #### Key Responsibilities:
 - User authentication endpoints (Email & Google)
@@ -1600,11 +1601,12 @@ git push origin varsha
 **Team:** Backend
 
 #### Your Files:
-- `backend/routes/progress.py` - Progress tracking endpoints
-- `backend/routes/analytics.py` - User analytics and statistics endpoints
-- `backend/services/progress_service.py` - Progress calculation and tracking logic
-- `backend/services/analytics_service.py` - Analytics aggregation logic
-- `backend/utils/helpers.py` - Helper functions and utilities
+- `backend/app/api/routes/progress.py` - Progress tracking endpoints
+- `backend/app/api/routes/admin.py` - Admin panel endpoints
+- `backend/app/services/progress_tracker.py` - Progress calculation and tracking logic
+- `backend/app/services/resource_recommender.py` - Resource recommendation logic
+- `backend/app/utils/helpers.py` - Helper functions and utilities
+- `backend/app/utils/validators.py` - Input validation utilities
 
 #### Key Responsibilities:
 - Progress tracking system
