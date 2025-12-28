@@ -237,35 +237,278 @@ All placeholder files have been created. Each team member must implement the log
 
 ## 📋 Development Workflow
 
-### Step 1: Setup Environment (Day 1)
-Each member:
-1. Clone the repository
-2. Create your branch: `git checkout -b <your-name>`
-3. Setup Python virtual environment
-4. Install dependencies: `pip install -r requirements.txt`
-5. Copy `.env.example` to `.env` and add credentials
-6. Test database connection
+### Step 1: Clone Repository & Setup Branch (Day 1)
 
-### Step 2: Implementation (Day 1-3)
-1. Read your assigned files (all have comments explaining what to implement)
-2. Implement functionality step by step
-3. Test each endpoint/function
-4. Commit frequently: `git commit -m "Implemented feature X"`
-5. Push to your branch: `git push origin <your-name>`
+**Repository URL:** `https://github.com/DhanushPadarthi/PathForge.git`
 
-### Step 3: Integration (Day 4)
-1. Create Pull Request to main branch
-2. Review each other's code
-3. Merge after approval
-4. Test integrated application
-5. Fix integration issues
+#### For All Team Members:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# 2. Switch to YOUR branch (already created)
+git checkout <your-branch-name>
+# Example: git checkout dhanush
+# Example: git checkout varun
+# Example: git checkout varsha
+# Example: git checkout mrinaliny
+# Example: git checkout varshareddy
+
+# 3. Verify you're on the correct branch
+git branch
+# You should see * next to your branch name
+
+# 4. Setup Python virtual environment (Backend members only)
+cd backend
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+source venv/bin/activate
+
+# 5. Install dependencies
+pip install -r requirements.txt
+
+# 6. Setup environment variables
+copy .env.example .env          # Windows
+# or
+cp .env.example .env            # Mac/Linux
+
+# 7. Edit .env file with your credentials
+# Add MongoDB URI, Firebase credentials, OpenAI API key, etc.
+```
+
+---
+
+### Step 2: Daily Development Workflow (Day 1-3)
+
+#### Before Starting Work Each Day:
+
+```bash
+# 1. Switch to your branch
+git checkout <your-branch-name>
+
+# 2. Pull latest changes from main
+git pull origin main
+
+# 3. Check status
+git status
+```
+
+#### While Working:
+
+1. **Open your assigned files** (check TEAM_ASSIGNMENTS.md for your file list)
+2. **Read the comments** in each file explaining what to implement
+3. **Implement functionality** step by step
+4. **Test your code** frequently
+   - For API endpoints: Use Postman or Thunder Client
+   - For functions: Write test cases or manual testing
+
+#### After Completing a Feature:
+
+```bash
+# 1. Check what files you've modified
+git status
+
+# 2. Stage your changes
+git add .
+# Or add specific files:
+git add backend/app/api/routes/auth.py
+
+# 3. Commit with a clear message
+git commit -m "Implemented user login endpoint with JWT authentication"
+# More examples:
+# git commit -m "Added resume PDF parser using PyPDF2"
+# git commit -m "Created roadmap generation with ChatGPT integration"
+# git commit -m "Implemented progress tracking endpoints"
+
+# 4. Push to YOUR branch on GitHub
+git push origin <your-branch-name>
+# Example: git push origin dhanush
+# Example: git push origin varun
+```
+
+#### Commit Message Guidelines:
+
+✅ **Good commit messages:**
+- `"Implemented JWT token generation and validation"`
+- `"Added MongoDB connection with Motor async driver"`
+- `"Created resume upload endpoint with Firebase Storage"`
+- `"Fixed bug in skill gap analysis algorithm"`
+
+❌ **Bad commit messages:**
+- `"Updated files"`
+- `"Changes"`
+- `"Fix"`
+
+---
+
+### Step 3: Integration & Merge (Day 4)
+
+#### Creating a Pull Request:
+
+```bash
+# 1. Make sure all your work is committed and pushed
+git status
+git push origin <your-branch-name>
+
+# 2. Go to GitHub repository
+# https://github.com/DhanushPadarthi/PathForge
+
+# 3. Click "Pull Requests" tab
+
+# 4. Click "New Pull Request"
+
+# 5. Select:
+#    - Base: main
+#    - Compare: <your-branch-name>
+
+# 6. Add title and description:
+#    Title: "Backend: Authentication System Implementation"
+#    Description: List what you've implemented
+
+# 7. Request review from Dhanush (team lead)
+
+# 8. Wait for approval and merge
+```
+
+#### After Your PR is Merged:
+
+```bash
+# Update your local main branch
+git checkout main
+git pull origin main
+
+# Update your branch with latest main
+git checkout <your-branch-name>
+git merge main
+
+# Continue working on new features
+```
+
+---
 
 ### Step 4: Testing & Polish (Day 5)
-1. End-to-end testing
-2. Bug fixes
-3. Performance optimization
-4. Documentation updates
-5. Presentation preparation
+
+```bash
+# 1. Pull latest integrated code
+git checkout main
+git pull origin main
+
+# 2. Test the complete application
+cd backend
+uvicorn app.main:app --reload
+
+# 3. Run tests (if available)
+pytest
+
+# 4. Fix any bugs found
+git checkout <your-branch-name>
+# Fix bugs in your files
+git add .
+git commit -m "Fixed bug in authentication middleware"
+git push origin <your-branch-name>
+
+# 5. Create final PR if needed
+```
+
+---
+
+### 🔄 Common Git Commands Reference
+
+```bash
+# Check which branch you're on
+git branch
+
+# See all branches (local and remote)
+git branch -a
+
+# Switch between branches
+git checkout <branch-name>
+
+# See what files you've changed
+git status
+
+# See what changes you've made
+git diff
+
+# Undo changes to a file (before commit)
+git checkout -- <filename>
+
+# View commit history
+git log --oneline
+
+# Pull latest changes from main to your branch
+git checkout <your-branch-name>
+git pull origin main
+
+# Stash changes temporarily
+git stash
+git stash pop
+
+# Discard all local changes (CAREFUL!)
+git reset --hard HEAD
+```
+
+---
+
+### ⚠️ Important Git Rules
+
+**DO:**
+- ✅ Always work on YOUR branch
+- ✅ Commit frequently with clear messages
+- ✅ Push to YOUR branch regularly
+- ✅ Pull from main before starting work
+- ✅ Test before committing
+
+**DON'T:**
+- ❌ Never push directly to `main` branch
+- ❌ Never work on someone else's branch
+- ❌ Never commit sensitive data (.env files)
+- ❌ Never force push (`git push -f`)
+- ❌ Never commit without testing
+
+---
+
+### 🆘 Git Troubleshooting
+
+#### "I'm on the wrong branch!"
+```bash
+git stash                    # Save your changes
+git checkout <correct-branch>
+git stash pop               # Apply your changes
+```
+
+#### "I need to update my branch with latest main"
+```bash
+git checkout <your-branch>
+git pull origin main
+# If conflicts, resolve them in your code editor
+git add .
+git commit -m "Merged latest changes from main"
+git push origin <your-branch>
+```
+
+#### "I committed to the wrong branch!"
+```bash
+git log                     # Copy the commit hash
+git checkout <correct-branch>
+git cherry-pick <commit-hash>
+git push origin <correct-branch>
+```
+
+#### "I want to undo my last commit"
+```bash
+# Keep the changes but undo commit
+git reset --soft HEAD~1
+
+# Discard the changes and commit
+git reset --hard HEAD~1
+```
 
 ---
 
