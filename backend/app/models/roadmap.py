@@ -79,3 +79,5 @@ class ModuleSummary(BaseModel):
     resources_skipped: int 
     completion_date: datetime 
     next_module_title: Optional[str] = None 
+﻿# Roadmap model
+# To be implemented

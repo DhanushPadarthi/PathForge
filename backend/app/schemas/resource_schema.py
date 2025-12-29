@@ -1,3 +1,2 @@
-# Resource schemas
-# ResourceCreate, ResourceResponse, ResourceUpdate
-# ResourceRecommendationRequest, ResourceRecommendationResponse
+﻿# Resource schemas
+# To be implemented

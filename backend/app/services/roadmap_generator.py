@@ -40,3 +40,5 @@ async def generate_learning_roadmap(
     )
 
     return json.loads(response.choices[0].message.content)
+﻿# Roadmap generation service
+# To be implemented

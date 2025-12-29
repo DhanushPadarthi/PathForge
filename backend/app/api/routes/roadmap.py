@@ -221,3 +221,5 @@ async def generate_roadmap(request: GenerateRoadmapRequest):
         print(f"   Traceback:") 
         traceback.print_exc() 
         raise HTTPException(status_code=500, detail=f"Roadmap generation failed: {str(e)}") 
+﻿# API routes for roadmap generation
+# To be implemented

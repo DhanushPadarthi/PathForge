@@ -249,3 +249,5 @@ production-ready implementations, and cutting-edge techniques."""
                 ]
             }
 
+﻿# AI service for skill analysis and roadmap generation
+# To be implemented

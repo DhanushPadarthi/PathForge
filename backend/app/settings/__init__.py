@@ -1,2 +1,1 @@
-# Main settings module
-# Export all settings
+﻿# Settings package
