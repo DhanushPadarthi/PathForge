@@ -1,4 +1,2 @@
-# Roadmap schemas
-# RoadmapCreate, RoadmapResponse, RoadmapUpdate
-# ModuleSchema, MilestoneSchema
-# RoadmapGenerateRequest
+﻿# Roadmap schemas
+# To be implemented

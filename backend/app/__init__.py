@@ -1,1 +1,1 @@
-# PathForge Backend Application
+﻿# Package initialization

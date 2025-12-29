@@ -6,7 +6,10 @@ import logging
 logger = logging.getLogger(__name__)
 
 class MongoDB:
-    client: Optional[AsyncIOMotorClient] = None
+    client: Optional[AsyncIOMotorClient]
+    
+    def __init__(self):
+        self.client = None
     
     @classmethod
     async def connect_db(cls):
