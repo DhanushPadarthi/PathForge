@@ -1,4 +1,2 @@
-# Progress schemas
-# ProgressCreate, ProgressResponse, ProgressUpdate
-# ModuleSummaryResponse, ProgressStatsResponse
-# CompleteResourceRequest, SkipResourceRequest
+﻿# Progress schemas
+# To be implemented

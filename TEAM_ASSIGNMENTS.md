@@ -1,105 +1,813 @@
-# PathForge - Backend Team File Assignments
+# PathForge - Team File Assignments
 
-## ✅ Complete Project Structure Created
+## AWS Mini Hackathon Team Structure
 
-All placeholder files have been created. Each team member must implement the logic in their assigned files.
-
----
-
-## 👥 Team Members & Branches
-
-| Member | Role | Branch | Focus Area |
-|--------|------|--------|------------|
-| **Dhanush** | Backend Lead | `dhanush` | Core Setup & Authentication |
-| **Varun** | Backend Developer | `varun` | Resume & Skill Analysis |
-| **Varsha** | Backend Developer | `varsha` | AI & Roadmap Generation |
-| **Mrinaliny** | Backend Developer | `mrinaliny` | Resources & Progress Tracking |
-| **Varshareddy** | Documentation Lead | `varshareddy` | Presentation & PPT |
+### Team Members & Branches
+- **Dhanush** - Backend Team Lead - Branch: `dhanush`
+- **Varun** - Backend Team - Branch: `varun`
+- **Varsha** - Backend Team - Branch: `varsha`
+- **Mrinaliny** - Backend Team - Branch: `mrinaliny`
+- **Varshareddy** - Presentation & Documentation - Branch: `varshareddy`
 
 ---
 
-## 🔧 Backend File Assignments
+## Development Strategy
 
-### 1️⃣ Dhanush - Core Backend & Authentication System
+### Phase 1: Backend Development (CURRENT PRIORITY)
+**All team members focus on backend first - Complete backend before moving to frontend**
+
+### 🔧 Backend Team
+**Members:** Dhanush (Lead), Varun, Varsha, Mrinaliny
+
+**Focus:** Build and complete all API endpoints, database models, AI integrations, and business logic
+
+### 🎯 Presentation & Documentation
+**Member:** Varshareddy
+
+**Focus:** Create presentation deck, polish documentation, prepare demo materials
+
+---
+
+## File Assignments
+
+### 🔧 Dhanush (Backend Lead) - Core Backend & Authentication
 **Branch:** `dhanush`  
-**Role:** Backend Team Lead
+**Team:** Backend
 
-#### 📂 Your Files (9 files):
+#### Your Files:
+- `backend/app/main.py` - FastAPI application setup and configuration
+- `backend/app/config/settings.py` - Environment variables and settings
+- `backend/app/config/mongodb.py` - MongoDB connection and database setup
+- `backend/app/config/firebase.py` - Firebase Admin SDK setup
+- `backend/app/core/security.py` - Password hashing, JWT tokens
+- `backend/app/core/dependencies.py` - FastAPI dependencies
+- `backend/app/api/routes/auth.py` - Authentication endpoints
+- `backend/app/models/user.py` - User database model
+- `backend/app/schemas/user_schema.py` - User Pydantic schemas
 
-**Application Setup:**
-- ✅ `backend/app/main.py` - FastAPI app initialization, CORS, middleware, router registration
-- ✅ `backend/app/config/settings.py` - Environment variables, app settings, configuration management
-- ✅ `backend/app/config/mongodb.py` - MongoDB Atlas connection, database initialization
-- ✅ `backend/app/config/firebase.py` - Firebase Admin SDK setup for auth & storage
+#### Key Responsibilities:
+- FastAPI application setup and middleware configuration
+- MongoDB database connection and initialization
+- Firebase Admin SDK configuration
+- Database schema design and models
+- User authentication system (Email & Google OAuth)
+- JWT token generation and validation
+- Password hashing and security
+- Error handling and validation
+- Integration of all routes and services
+- Final code review and merging
 
-**Security & Authentication:**
-- ✅ `backend/app/core/security.py` - Password hashing (bcrypt), JWT token creation/validation
-- ✅ `backend/app/core/dependencies.py` - FastAPI dependencies (get_current_user, get_db, admin_required)
+#### Features to Implement:
+- ✅ FastAPI app with CORS middleware
+- ✅ MongoDB connection with error handling
+- ✅ Firebase Admin SDK setup
+- ✅ User model and authentication system
+- ✅ User signup endpoint (POST /api/auth/signup)
+- ✅ User login endpoint (POST /api/auth/login)
+- ✅ Google OAuth integration (POST /api/auth/google)
+- ✅ JWT token generation and validation
+- ✅ Password hashing with bcrypt
+- ✅ Protected route dependencies
 
-**Authentication Routes:**
-- ✅ `backend/app/api/routes/auth.py` - Login, Register, Google OAuth, Logout, Get Current User
+#### Git Commands:
+```bash
+# Initial setup
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+git checkout dhanush
 
-**Models & Schemas:**
-- ✅ `backend/app/models/user.py` - User database model (fields: id, email, password_hash, role, etc.)
-- ✅ `backend/app/schemas/user_schema.py` - Pydantic schemas (UserCreate, UserLogin, UserResponse)
+# Set up Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate  # Windows
+pip install -r requirements.txt
 
-#### 🎯 Key Responsibilities:
-1. Setup FastAPI application with CORS middleware
-2. Configure MongoDB connection (use Motor for async operations)
-3. Configure Firebase Admin SDK
-4. Implement password hashing using bcrypt
-5. Create JWT token generation and validation
-6. Build authentication endpoints (register, login, Google OAuth)
-7. Create authentication dependencies for protected routes
-8. Implement role-based access control (Student/Admin)
+# Daily workflow
+git checkout dhanush
+git pull origin main
+# ... work on your files ...
+git add .
+git commit -m "Implemented FastAPI setup with MongoDB and auth"
+git push origin dhanush
 
-#### 📚 Libraries to Use:
-- `fastapi`, `uvicorn`
-- `motor` (async MongoDB)
-- `firebase-admin`
-- `passlib[bcrypt]` (password hashing)
-- `python-jose` (JWT tokens)
+# When merging all branches to main (Team Lead only)
+git checkout main
+git pull origin main
+git merge dhanush
+git merge varun
+git merge varsha
+git merge mrinaliny
+git push origin main
+```
 
 ---
 
-### 2️⃣ Varun - Resume Processing & Skill Analysis
+### 🔧 Varun - Resume Processing & Skill Analysis
 **Branch:** `varun`  
-**Role:** Backend Developer
+**Team:** Backend
 
-#### 📂 Your Files (6 files):
+#### Your Files:
+- `backend/app/api/routes/resume.py` - Resume upload and analysis endpoints
+- `backend/app/api/routes/skill_analysis.py` - Skill analysis endpoints
+- `backend/app/services/resume_parser.py` - PDF/DOCX text extraction
+- `backend/app/services/skill_analyzer.py` - Skill gap analysis logic
+- `backend/app/models/skill.py` - Skill database model
+- `backend/app/utils/validators.py` - File validation utilities
 
-**API Routes:**
-- ✅ `backend/app/api/routes/resume.py` - Upload resume, Parse resume, Get resume data, Delete resume
-- ✅ `backend/app/api/routes/skill_analysis.py` - Analyze skills, Gap analysis, Get required skills, Process questionnaire
+#### Key Responsibilities:
+- Resume file upload handling (PDF/DOCX)
+- Text extraction from PDF using PyPDF2/pdfplumber
+- Text extraction from DOCX using python-docx
+- Firebase Storage integration for file uploads
+- Resume section parsing (education, experience, skills)
+- Questionnaire for users without resume
+- Skill comparison and gap analysis
+- File type validation and security
+- Error handling for file operations
 
-**Services:**
-- ✅ `backend/app/services/resume_parser.py` - Extract text from PDF/DOCX, Parse resume sections
-- ✅ `backend/app/services/skill_analyzer.py` - Compare skills, Identify gaps, Calculate proficiency
+#### Features to Implement:
+- ✅ Resume upload endpoint (POST /api/resume/upload)
+- ✅ PDF text extraction using PyPDF2
+- ✅ DOCX text extraction using python-docx
+- ✅ Firebase Storage file upload
+- ✅ Resume data parsing and structuring
+- ✅ Skill analysis endpoint (POST /api/skills/analyze)
+- ✅ Skill gap analysis (POST /api/skills/gap-analysis)
+- ✅ Questionnaire processing (POST /api/skills/questionnaire)
+- ✅ File validation (type, size, security)
+- ✅ Resume data storage in MongoDB
 
-**Models & Utils:**
-- ✅ `backend/app/models/skill.py` - Skill model (name, category, proficiency_level, source)
-- ✅ `backend/app/utils/validators.py` - File validation (PDF/DOCX), Email validation, Input sanitization
+#### Git Commands:
+```bash
+# Initial setup
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+git checkout varun
 
-#### 🎯 Key Responsibilities:
-1. Implement resume file upload (PDF/DOCX) with Firebase Storage
-2. Extract text from PDF using PyPDF2 or pdfplumber
-3. Extract text from DOCX using python-docx
-4. Parse resume sections (education, experience, skills, projects)
-5. Create questionnaire for users without resume
-6. Compare user skills with required role skills
-7. Identify skill gaps and missing competencies
-8. Calculate skill proficiency levels
-9. Validate file types and sizes
+# Set up Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate  # Windows
+pip install -r requirements.txt
 
-#### 📚 Libraries to Use:
-- `PyPDF2` or `pdfplumber` (PDF parsing)
-- `python-docx` (DOCX parsing)
-- `firebase-admin` (file storage)
-- `python-multipart` (file uploads)
+# Daily workflow
+git checkout varun
+git pull origin main
+# ... work on your files ...
+git add .
+git commit -m "Implemented resume parsing with PDF and DOCX support"
+git push origin varun
+```
 
 ---
 
-### 3️⃣ Varsha - AI Integration & Roadmap Generation
+### 🔧 Varsha - AI Integration & Roadmap Generation
+**Branch:** `varsha`  
+**Team:** Backend
+
+#### Your Files:
+- `backend/app/services/ai_service.py` - OpenAI/ChatGPT API integration
+- `backend/app/services/roadmap_generator.py` - Roadmap generation logic
+- `backend/app/api/routes/roadmap.py` - Roadmap endpoints
+- `backend/app/models/roadmap.py` - Roadmap database model
+- `backend/app/models/career_role.py` - Career role model
+- `backend/app/schemas/roadmap_schema.py` - Roadmap Pydantic schemas
+
+#### Key Responsibilities:
+- ChatGPT API integration for AI features
+- AI-powered skill extraction from resume
+- Skill gap analysis using AI
+- Deadline-based roadmap generation
+- Resource recommendation algorithm
+- Module summary generation
+- Sequential resource unlocking logic
+- Career role management
+- Time-based roadmap alignment
+
+#### Features to Implement:
+- ✅ ChatGPT service for skill extraction
+- ✅ Skill gap analysis (compare current vs required skills)
+- ✅ Roadmap generation endpoint (POST /api/roadmap/generate)
+- ✅ Time-based roadmap alignment (30min/1hr/2hr daily)
+- ✅ Module creation with milestones
+- ✅ Sequential unlocking mechanism
+- ✅ Module summary generation
+- ✅ Roadmap CRUD operations
+- ✅ Career role definitions
+- ✅ AI prompt engineering for accurate results
+
+#### Git Commands:
+```bash
+# Initial setup
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+git checkout varsha
+
+# Set up Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+
+# Daily workflow
+git checkout varsha
+git pull origin main
+# ... work on your files ...
+git add .
+git commit -m "Implemented AI roadmap generation with ChatGPT"
+git push origin varsha
+```
+
+---
+
+### 🔧 Mrinaliny - Resources, Progress & Admin Panel
+**Branch:** `mrinaliny`  
+**Team:** Backend
+
+#### Your Files:
+- `backend/app/api/routes/resources.py` - Learning resources endpoints
+- `backend/app/api/routes/progress.py` - Progress tracking endpoints
+- `backend/app/api/routes/admin.py` - Admin panel endpoints
+- `backend/app/services/resource_recommender.py` - Resource recommendation logic
+- `backend/app/services/progress_tracker.py` - Progress tracking logic
+- `backend/app/models/resource.py` - Resource database model
+- `backend/app/models/progress.py` - Progress database model
+- `backend/app/schemas/resource_schema.py` - Resource schemas
+- `backend/app/schemas/progress_schema.py` - Progress schemas
+- `backend/app/utils/helpers.py` - Helper utilities
+
+#### Key Responsibilities:
+- AI-powered resource recommendations
+- Resource management endpoints
+- Progress tracking system
+- Complete/Skip resource functionality
+- Progress percentage calculation
+- Real-time progress updates
+- Module completion tracking
+- Time tracking for resources
+- Admin panel CRUD operations
+- Platform statistics
+- Database query optimization
+
+#### Features to Implement:
+- ✅ Resource recommendation API (GET /api/resources)
+- ✅ Mark resource as complete (POST /api/progress/complete)
+- ✅ Skip resource endpoint (POST /api/progress/skip)
+- ✅ Get user progress (GET /api/progress/:userId)
+- ✅ Progress percentage calculation
+- ✅ Module completion status
+- ✅ Learning time tracking
+- ✅ Admin endpoints (POST/PUT/DELETE for roles & resources)
+- ✅ User management (GET/DELETE /api/admin/users)
+- ✅ Platform statistics (GET /api/admin/statistics)
+- ✅ Helper utilities (date formatting, calculations)
+
+#### Git Commands:
+```bash
+# Initial setup
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+git checkout mrinaliny
+
+# Set up Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+
+# Daily workflow
+git checkout mrinaliny
+git pull origin main
+# ... work on your files ...
+git add .
+git commit -m "Implemented progress tracking and admin panel"
+git push origin mrinaliny
+```
+
+---
+
+### 🎯 Varshareddy - Presentation & Documentation
+**Branch:** `varshareddy`  
+**Team:** Presentation
+
+#### Your Files:
+- `PRESENTATION.pptx` or `PRESENTATION.pdf` - Demo presentation deck
+- `PRD.md` - Product Requirements Document (polish)
+- `README.md` - Project documentation (update)
+- `API_DOCUMENTATION.md` - API endpoints documentation
+
+#### Key Responsibilities:
+- Create compelling presentation for hackathon demo
+- Design presentation slides
+- Polish existing documentation
+- Create demo script
+- Prepare talking points for presentation
+- Design visual assets (optional)
+- Prepare sample data for demo
+- Create API documentation
+- Write setup instructions
+
+#### Presentation Structure:
+1. **Title Slide** - PathForge branding
+2. **Problem Statement** - Why PathForge is needed
+3. **Solution Overview** - What PathForge does
+4. **Target Users** - Who benefits
+5. **Key Features** - 8 core features with icons
+6. **Dual Entry Flow** - With/Without resume paths
+7. **Technology Stack** - Show tech logos
+8. **System Architecture** - Backend + Frontend + AI diagram
+9. **User Journey** - Step-by-step flow
+10. **Demo Screenshots** - UI mockups or actual screens
+11. **Future Enhancements** - AI Mentor, Project Generator, Trending Skills
+12. **Team** - Team member roles
+13. **Thank You** - Contact & GitHub link
+
+#### Git Commands:
+```bash
+# Initial setup
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+git checkout varshareddy
+
+# Daily workflow
+git checkout varshareddy
+git pull origin main
+# ... work on presentation and docs ...
+git add .
+git commit -m "Created presentation deck for demo"
+git push origin varshareddy
+```
+
+---
+
+## Backend Development Checklist
+
+### Phase 1 Tasks (Backend Priority)
+
+#### Core Infrastructure (Dhanush)
+- [ ] FastAPI app setup with CORS
+- [ ] MongoDB connection
+- [ ] Firebase Admin SDK setup
+- [ ] Database models (User, Roadmap, Resource, Progress)
+- [ ] User authentication system
+- [ ] JWT token handling
+- [ ] Password hashing
+
+#### Resume & Skills (Varun)
+- [ ] Resume upload endpoint
+- [ ] PDF/DOCX text extraction
+- [ ] Firebase Storage integration
+- [ ] Skill analysis endpoints
+- [ ] Skill gap analysis algorithm
+- [ ] Questionnaire processing
+- [ ] File validation
+
+#### AI & Roadmap (Varsha)
+- [ ] ChatGPT service setup
+- [ ] AI skill extraction
+- [ ] Skill gap analysis with AI
+- [ ] Roadmap generation algorithm
+- [ ] Time-based module creation
+- [ ] Sequential unlocking
+- [ ] Career role management
+
+#### Resources & Progress (Mrinaliny)
+- [ ] Resource recommendation system
+- [ ] Progress tracking endpoints
+- [ ] Complete/Skip functionality
+- [ ] Progress percentage calculation
+- [ ] Admin CRUD endpoints
+- [ ] Platform statistics
+- [ ] Helper utilities
+
+---
+
+## Backend Dependencies (requirements.txt)
+
+```txt
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+pymongo==4.6.0
+motor==3.3.2
+firebase-admin==6.3.0
+openai==1.3.7
+PyPDF2==3.0.1
+python-docx==1.1.0
+pdfplumber==0.10.3
+python-dotenv==1.0.0
+requests==2.31.0
+aiofiles==23.2.1
+```
+
+---
+
+## Environment Variables (.env file)
+
+```bash
+# MongoDB
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/pathforge?retryWrites=true&w=majority
+
+# Firebase Configuration
+FIREBASE_API_KEY=your_firebase_api_key
+FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+FIREBASE_APP_ID=your_app_id
+
+# OpenAI Configuration
+OPENAI_API_KEY=sk-your-openai-api-key
+
+# JWT Configuration
+SECRET_KEY=your-secret-key-here-use-long-random-string
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+# CORS Configuration
+ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+
+# Environment
+ENVIRONMENT=development
+```
+
+---
+
+## Quick Git Workflow Reference
+
+### Daily Workflow for Everyone
+
+```bash
+# 1. Start your day
+git checkout <your-branch>
+git pull origin main
+
+# 2. Work on your assigned files
+# ... code, test, debug ...
+
+# 3. Check what you changed
+git status
+
+# 4. Stage your changes
+git add .
+
+# 5. Commit with descriptive message
+git commit -m "Implemented [feature name]"
+
+# 6. Push to your branch
+git push origin <your-branch>
+```
+
+### Common Git Commands
+
+| Command | Purpose |
+|---------|---------|
+| `git status` | See modified files |
+| `git add .` | Stage all changes |
+| `git commit -m "message"` | Commit with message |
+| `git push origin <branch>` | Push to your branch |
+| `git pull origin main` | Get latest from main |
+| `git checkout <branch>` | Switch branches |
+| `git log --oneline` | View commit history |
+| `git branch` | See all branches |
+| `git diff` | See file changes |
+
+---
+
+## Backend Setup Instructions
+
+### Prerequisites
+- Python 3.9+
+- MongoDB Atlas account
+- OpenAI API key
+- Firebase project
+
+### Setup Steps
+
+1. **Clone Repository**
+```bash
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+```
+
+2. **Switch to Your Branch**
+```bash
+git checkout <your-branch-name>
+```
+
+3. **Set Up Python Environment**
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate  # Windows
+# or
+source venv/bin/activate  # Mac/Linux
+```
+
+4. **Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+5. **Create .env File**
+```bash
+# Copy example file
+copy .env.example .env  # Windows
+# or
+cp .env.example .env  # Mac/Linux
+
+# Edit .env and add all your credentials
+```
+
+6. **Run Backend Server**
+```bash
+uvicorn app.main:app --reload
+```
+
+Server will run at: `http://localhost:8000`  
+API Documentation: `http://localhost:8000/docs`
+
+---
+
+## API Endpoints Overview
+
+### Authentication (Dhanush)
+- `POST /api/auth/signup` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/google` - Google OAuth login
+- `GET /api/auth/me` - Get current user
+- `POST /api/auth/logout` - User logout
+
+### Resume (Varun)
+- `POST /api/resume/upload` - Upload and parse resume
+- `POST /api/resume/parse` - Parse uploaded resume
+- `GET /api/resume/{user_id}` - Get parsed resume data
+- `DELETE /api/resume/{user_id}` - Delete user's resume
+
+### Skills (Varun)
+- `POST /api/skills/analyze` - Analyze user skills from resume
+- `POST /api/skills/gap-analysis` - Identify skill gaps
+- `GET /api/skills/required/{role_id}` - Get required skills for role
+- `POST /api/skills/questionnaire` - Process questionnaire answers
+
+### Roadmap (Varsha)
+- `POST /api/roadmap/generate` - Generate personalized roadmap
+- `GET /api/roadmap/{user_id}` - Get user's roadmap
+- `PUT /api/roadmap/{roadmap_id}` - Update roadmap
+- `DELETE /api/roadmap/{roadmap_id}` - Delete roadmap
+- `GET /api/roadmap/{roadmap_id}/modules` - Get roadmap modules
+
+### Resources (Mrinaliny)
+- `GET /api/resources` - Get all resources
+- `GET /api/resources/{resource_id}` - Get specific resource
+- `POST /api/resources/recommend` - Get AI-recommended resources
+- `GET /api/resources/module/{module_id}` - Get resources for module
+
+### Progress (Mrinaliny)
+- `POST /api/progress/complete` - Mark resource as complete
+- `POST /api/progress/skip` - Skip a resource
+- `GET /api/progress/{user_id}` - Get user's progress
+- `GET /api/progress/summary/{module_id}` - Get module summary
+- `PUT /api/progress/update` - Update progress
+
+### Admin (Mrinaliny)
+- `GET /api/admin/users` - Get all users
+- `GET /api/admin/users/{user_id}` - Get specific user
+- `DELETE /api/admin/users/{user_id}` - Delete user
+- `GET /api/admin/statistics` - Get platform statistics
+- `POST /api/admin/career-roles` - Add career role
+- `PUT /api/admin/career-roles/{role_id}` - Update career role
+- `DELETE /api/admin/career-roles/{role_id}` - Delete career role
+- `POST /api/admin/resources` - Add learning resource
+- `PUT /api/admin/resources/{resource_id}` - Update resource
+- `DELETE /api/admin/resources/{resource_id}` - Delete resource
+
+---
+
+## Testing Your Backend
+
+### Using Postman/Thunder Client
+
+1. **Test Authentication**
+```json
+POST http://localhost:8000/api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123",
+  "name": "Test User"
+}
+```
+
+2. **Test Login**
+```json
+POST http://localhost:8000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+```
+
+3. **Test Resume Upload**
+```
+POST http://localhost:8000/api/resume/upload
+Headers: 
+  Authorization: Bearer <your-jwt-token>
+Body: form-data
+  file: <select PDF/DOCX file>
+```
+
+4. **Test Roadmap Generation**
+```json
+POST http://localhost:8000/api/roadmap/generate
+Headers:
+  Authorization: Bearer <your-jwt-token>
+Content-Type: application/json
+
+{
+  "career_role_id": "full-stack-developer",
+  "learning_time": "1hr",
+  "deadline": "2024-03-30"
+}
+```
+
+---
+
+## Communication & Collaboration
+
+### Daily Standup (Recommended)
+- What did you complete yesterday?
+- What will you work on today?
+- Any blockers?
+
+### Code Review Process
+1. Push to your branch
+2. Create Pull Request (optional)
+3. Tag Dhanush for review
+4. Dhanush merges to main
+
+### Naming Conventions
+- **Files**: lowercase with underscores (`resume_parser.py`)
+- **Functions**: snake_case (`extract_resume_text()`)
+- **Classes**: PascalCase (`UserModel`, `RoadmapService`)
+- **Constants**: UPPER_SNAKE_CASE (`JWT_SECRET_KEY`, `MAX_FILE_SIZE`)
+- **Endpoints**: kebab-case (`/api/resume/upload`, `/api/auth/login`)
+- **Variables**: snake_case (`user_id`, `roadmap_data`)
+
+---
+
+## Important Guidelines
+
+### ⚠️ DO NOT:
+- Push directly to `main` branch
+- Modify files not assigned to you
+- Commit without testing
+- Share API keys in code (use .env)
+- Delete others' work
+- Commit .env file
+- Force push (`git push -f`)
+
+### ✅ DO:
+- Work only on your assigned files
+- Pull from main regularly (daily)
+- Test before committing
+- Write clear commit messages
+- Ask for help when stuck
+- Document your code with comments
+- Handle errors properly
+- Use try-except blocks
+- Validate user inputs
+- Log important operations
+
+---
+
+## Troubleshooting
+
+### Python Environment Issues
+```bash
+# If venv doesn't activate
+python -m venv venv --clear
+venv\Scripts\activate
+
+# If packages don't install
+pip install --upgrade pip
+pip install -r requirements.txt --no-cache-dir
+```
+
+### MongoDB Connection Failed
+- Check MONGODB_URI in .env
+- Verify IP whitelist in MongoDB Atlas (add 0.0.0.0/0 for testing)
+- Test connection string in MongoDB Compass
+- Check username/password
+
+### Git Merge Conflicts
+```bash
+# Update from main first
+git checkout <your-branch>
+git pull origin main
+
+# If conflicts occur
+# 1. Open conflicted files
+# 2. Look for <<<<<<< and >>>>>>>
+# 3. Choose correct code
+# 4. Remove conflict markers
+git add .
+git commit -m "Resolved merge conflicts"
+git push origin <your-branch>
+```
+
+### Import Errors
+```bash
+# Make sure you're in backend directory
+cd backend
+
+# Reinstall dependencies
+pip install -r requirements.txt --upgrade
+
+# Check Python version
+python --version  # Should be 3.9+
+```
+
+### FastAPI Server Won't Start
+```bash
+# Check if port 8000 is already in use
+# On Windows:
+netstat -ano | findstr :8000
+
+# Kill process if needed
+taskkill /PID <process-id> /F
+
+# Try different port
+uvicorn app.main:app --reload --port 8001
+```
+
+---
+
+## GitHub Repository
+**URL:** https://github.com/DhanushPadarthi/PathForge.git
+
+## Branch Structure
+- `main` - Production code (Dhanush merges here)
+- `dhanush` - Core backend & authentication
+- `varun` - Resume processing & skill analysis
+- `varsha` - AI integration & roadmap generation
+- `mrinaliny` - Resources, progress & admin panel
+- `varshareddy` - Presentation & documentation
+
+---
+
+## Timeline Suggestion
+
+### Day 1 - Setup & Foundation
+- **All**: Clone repository, setup environment, create .env files
+- **Dhanush**: FastAPI setup, MongoDB connection, basic models
+- **Varun**: Resume upload endpoint structure
+- **Varsha**: ChatGPT service setup
+- **Mrinaliny**: Progress endpoints structure
+- **Varshareddy**: Start presentation outline
+
+### Day 2 - Core Features
+- **Dhanush**: Complete authentication system
+- **Varun**: PDF/DOCX parsing implementation
+- **Varsha**: Skill extraction with AI
+- **Mrinaliny**: Progress tracking logic
+- **Varshareddy**: Problem & solution slides
+
+### Day 3 - Advanced Features
+- **Dhanush**: User model and protected routes
+- **Varun**: Skill gap analysis algorithm
+- **Varsha**: Roadmap generation algorithm
+- **Mrinaliny**: Resource recommendation system
+- **Varshareddy**: Architecture & tech stack slides
+
+### Day 4 - Integration & Testing
+- **All**: Test APIs, fix bugs, integration testing
+- **Dhanush**: Merge all branches, resolve conflicts
+- **Varun**: Final testing of resume features
+- **Varsha**: Test roadmap generation
+- **Mrinaliny**: Admin panel completion
+- **Varshareddy**: Demo screenshots & talking points
+
+### Day 5 - Final Polish & Presentation
+- **All**: End-to-end testing, bug fixes
+- **Dhanush**: Final deployment preparation
+- **All Backend**: Documentation and comments
+- **Varshareddy**: Finalize presentation, rehearse demo
+
+---
+
+**Focus on Backend First - Build Solid API Foundation! 🚀**
+
+**Remember**: Quality over speed. Write clean, working code. Test before committing. Help each other when stuck.
+
+**Good Luck Team! Let's build an amazing product! 💪**
 **Branch:** `varsha`  
 **Role:** Backend Developer
 
@@ -134,6 +842,51 @@ All placeholder files have been created. Each team member must implement the log
 #### 📚 Libraries to Use:
 - `openai` (ChatGPT API)
 - `pydantic` (data validation)
+
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout varsha
+
+# Setup Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+# Create .env file
+copy .env.example .env
+# Edit .env and add OpenAI API key (OPENAI_API_KEY=sk-...)
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout varsha
+git pull origin main
+
+# Work on your files...
+# (backend/app/services/ai_service.py, services/roadmap_generator.py, etc.)
+
+# After completing a feature
+git add .
+git commit -m "Integrated ChatGPT API for skill extraction"
+git push origin varsha
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added OpenAI ChatGPT integration service"
+git commit -m "Implemented AI-powered roadmap generation"
+git commit -m "Created deadline-based learning modules"
+git commit -m "Added roadmap CRUD endpoints"
+```
 
 ---
 
@@ -193,6 +946,51 @@ All placeholder files have been created. Each team member must implement the log
 - `datetime` (time tracking)
 - `pymongo` (database queries)
 
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout mrinaliny
+
+# Setup Python environment
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+# Create .env file
+copy .env.example .env
+# Edit .env and add OpenAI API key and MongoDB URI
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout mrinaliny
+git pull origin main
+
+# Work on your files...
+# (backend/app/api/routes/resources.py, progress.py, admin.py, etc.)
+
+# After completing a feature
+git add .
+git commit -m "Implemented progress tracking with completion percentage"
+git push origin mrinaliny
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added AI-powered resource recommendation endpoint"
+git commit -m "Implemented progress tracking with time spent calculation"
+git commit -m "Created admin panel for user management"
+git commit -m "Added platform statistics dashboard"
+```
+
 ---
 
 ### 5️⃣ Varshareddy - Presentation & Documentation
@@ -233,39 +1031,317 @@ All placeholder files have been created. Each team member must implement the log
 4. Demo script and talking points
 5. Sample data for demonstration
 
+#### 💻 Your Git Commands (Copy & Paste):
+
+**Initial Setup (First Time Only):**
+```bash
+# Clone repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# Switch to your branch
+git checkout varshareddy
+```
+
+**Daily Workflow (Every Day):**
+```bash
+# Start of the day - Get latest changes
+git checkout varshareddy
+git pull origin main
+
+# Work on your presentation and documentation...
+# (Create PPT, update README.md, write API docs, etc.)
+
+# After completing work
+git add .
+git commit -m "Created presentation deck with 15 slides"
+git push origin varshareddy
+```
+
+**Example Commits:**
+```bash
+git commit -m "Added problem statement and solution slides"
+git commit -m "Created system architecture diagram"
+git commit -m "Updated README with setup instructions"
+git commit -m "Prepared demo script and talking points"
+```
+
 ---
 
 ## 📋 Development Workflow
 
-### Step 1: Setup Environment (Day 1)
-Each member:
-1. Clone the repository
-2. Create your branch: `git checkout -b <your-name>`
-3. Setup Python virtual environment
-4. Install dependencies: `pip install -r requirements.txt`
-5. Copy `.env.example` to `.env` and add credentials
-6. Test database connection
+### Step 1: Clone Repository & Setup Branch (Day 1)
 
-### Step 2: Implementation (Day 1-3)
-1. Read your assigned files (all have comments explaining what to implement)
-2. Implement functionality step by step
-3. Test each endpoint/function
-4. Commit frequently: `git commit -m "Implemented feature X"`
-5. Push to your branch: `git push origin <your-name>`
+**Repository URL:** `https://github.com/DhanushPadarthi/PathForge.git`
 
-### Step 3: Integration (Day 4)
-1. Create Pull Request to main branch
-2. Review each other's code
-3. Merge after approval
-4. Test integrated application
-5. Fix integration issues
+#### For All Team Members:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/DhanushPadarthi/PathForge.git
+cd PathForge
+
+# 2. Switch to YOUR branch (already created)
+git checkout <your-branch-name>
+# Example: git checkout dhanush
+# Example: git checkout varun
+# Example: git checkout varsha
+# Example: git checkout mrinaliny
+# Example: git checkout varshareddy
+
+# 3. Verify you're on the correct branch
+git branch
+# You should see * next to your branch name
+
+# 4. Setup Python virtual environment (Backend members only)
+cd backend
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On Mac/Linux:
+source venv/bin/activate
+
+# 5. Install dependencies
+pip install -r requirements.txt
+
+# 6. Setup environment variables
+copy .env.example .env          # Windows
+# or
+cp .env.example .env            # Mac/Linux
+
+# 7. Edit .env file with your credentials
+# Add MongoDB URI, Firebase credentials, OpenAI API key, etc.
+```
+
+---
+
+### Step 2: Daily Development Workflow (Day 1-3)
+
+#### Before Starting Work Each Day:
+
+```bash
+# 1. Switch to your branch
+git checkout <your-branch-name>
+
+# 2. Pull latest changes from main
+git pull origin main
+
+# 3. Check status
+git status
+```
+
+#### While Working:
+
+1. **Open your assigned files** (check TEAM_ASSIGNMENTS.md for your file list)
+2. **Read the comments** in each file explaining what to implement
+3. **Implement functionality** step by step
+4. **Test your code** frequently
+   - For API endpoints: Use Postman or Thunder Client
+   - For functions: Write test cases or manual testing
+
+#### After Completing a Feature:
+
+```bash
+# 1. Check what files you've modified
+git status
+
+# 2. Stage your changes
+git add .
+# Or add specific files:
+git add backend/app/api/routes/auth.py
+
+# 3. Commit with a clear message
+git commit -m "Implemented user login endpoint with JWT authentication"
+# More examples:
+# git commit -m "Added resume PDF parser using PyPDF2"
+# git commit -m "Created roadmap generation with ChatGPT integration"
+# git commit -m "Implemented progress tracking endpoints"
+
+# 4. Push to YOUR branch on GitHub
+git push origin <your-branch-name>
+# Example: git push origin dhanush
+# Example: git push origin varun
+```
+
+#### Commit Message Guidelines:
+
+✅ **Good commit messages:**
+- `"Implemented JWT token generation and validation"`
+- `"Added MongoDB connection with Motor async driver"`
+- `"Created resume upload endpoint with Firebase Storage"`
+- `"Fixed bug in skill gap analysis algorithm"`
+
+❌ **Bad commit messages:**
+- `"Updated files"`
+- `"Changes"`
+- `"Fix"`
+
+---
+
+### Step 3: Integration & Merge (Day 4)
+
+#### Creating a Pull Request:
+
+```bash
+# 1. Make sure all your work is committed and pushed
+git status
+git push origin <your-branch-name>
+
+# 2. Go to GitHub repository
+# https://github.com/DhanushPadarthi/PathForge
+
+# 3. Click "Pull Requests" tab
+
+# 4. Click "New Pull Request"
+
+# 5. Select:
+#    - Base: main
+#    - Compare: <your-branch-name>
+
+# 6. Add title and description:
+#    Title: "Backend: Authentication System Implementation"
+#    Description: List what you've implemented
+
+# 7. Request review from Dhanush (team lead)
+
+# 8. Wait for approval and merge
+```
+
+#### After Your PR is Merged:
+
+```bash
+# Update your local main branch
+git checkout main
+git pull origin main
+
+# Update your branch with latest main
+git checkout <your-branch-name>
+git merge main
+
+# Continue working on new features
+```
+
+---
 
 ### Step 4: Testing & Polish (Day 5)
-1. End-to-end testing
-2. Bug fixes
-3. Performance optimization
-4. Documentation updates
-5. Presentation preparation
+
+```bash
+# 1. Pull latest integrated code
+git checkout main
+git pull origin main
+
+# 2. Test the complete application
+cd backend
+uvicorn app.main:app --reload
+
+# 3. Run tests (if available)
+pytest
+
+# 4. Fix any bugs found
+git checkout <your-branch-name>
+# Fix bugs in your files
+git add .
+git commit -m "Fixed bug in authentication middleware"
+git push origin <your-branch-name>
+
+# 5. Create final PR if needed
+```
+
+---
+
+### 🔄 Common Git Commands Reference
+
+```bash
+# Check which branch you're on
+git branch
+
+# See all branches (local and remote)
+git branch -a
+
+# Switch between branches
+git checkout <branch-name>
+
+# See what files you've changed
+git status
+
+# See what changes you've made
+git diff
+
+# Undo changes to a file (before commit)
+git checkout -- <filename>
+
+# View commit history
+git log --oneline
+
+# Pull latest changes from main to your branch
+git checkout <your-branch-name>
+git pull origin main
+
+# Stash changes temporarily
+git stash
+git stash pop
+
+# Discard all local changes (CAREFUL!)
+git reset --hard HEAD
+```
+
+---
+
+### ⚠️ Important Git Rules
+
+**DO:**
+- ✅ Always work on YOUR branch
+- ✅ Commit frequently with clear messages
+- ✅ Push to YOUR branch regularly
+- ✅ Pull from main before starting work
+- ✅ Test before committing
+
+**DON'T:**
+- ❌ Never push directly to `main` branch
+- ❌ Never work on someone else's branch
+- ❌ Never commit sensitive data (.env files)
+- ❌ Never force push (`git push -f`)
+- ❌ Never commit without testing
+
+---
+
+### 🆘 Git Troubleshooting
+
+#### "I'm on the wrong branch!"
+```bash
+git stash                    # Save your changes
+git checkout <correct-branch>
+git stash pop               # Apply your changes
+```
+
+#### "I need to update my branch with latest main"
+```bash
+git checkout <your-branch>
+git pull origin main
+# If conflicts, resolve them in your code editor
+git add .
+git commit -m "Merged latest changes from main"
+git push origin <your-branch>
+```
+
+#### "I committed to the wrong branch!"
+```bash
+git log                     # Copy the commit hash
+git checkout <correct-branch>
+git cherry-pick <commit-hash>
+git push origin <correct-branch>
+```
+
+#### "I want to undo my last commit"
+```bash
+# Keep the changes but undo commit
+git reset --soft HEAD~1
+
+# Discard the changes and commit
+git reset --hard HEAD~1
+```
 
 ---
 
@@ -410,11 +1486,11 @@ git push origin main
 **Team:** Backend
 
 #### Your Files:
-- `backend/routes/roadmap.py` - Roadmap generation and retrieval endpoints
-- `backend/routes/resources.py` - Learning resources management endpoints
-- `backend/routes/admin.py` - Admin panel endpoints
-- `backend/services/chatgpt_service.py` - OpenAI/ChatGPT API integration
-- `backend/services/roadmap_service.py` - Roadmap generation business logic
+- `backend/app/api/routes/roadmap.py` - Roadmap generation and retrieval endpoints
+- `backend/app/api/routes/resources.py` - Learning resources management endpoints
+- `backend/app/api/routes/admin.py` - Admin panel endpoints
+- `backend/app/services/ai_service.py` - OpenAI/ChatGPT API integration
+- `backend/app/services/roadmap_generator.py` - Roadmap generation business logic
 - `backend/requirements.txt` - Python dependencies
 
 #### Key Responsibilities:
@@ -467,11 +1543,12 @@ git push origin varun
 **Team:** Backend
 
 #### Your Files:
-- `backend/routes/auth.py` - Authentication endpoints (Email/Google OAuth)
-- `backend/routes/user.py` - User profile management endpoints
-- `backend/services/auth_service.py` - Firebase authentication logic
-- `backend/services/user_service.py` - User management business logic
-- `backend/middleware/auth_middleware.py` - Authentication middleware
+- `backend/app/api/routes/auth.py` - Authentication endpoints (Email/Google OAuth)
+- `backend/app/api/routes/resume.py` - Resume upload and parsing endpoints
+- `backend/app/api/routes/skill_analysis.py` - Skill analysis endpoints
+- `backend/app/services/resume_parser.py` - Resume parsing logic (PDF/DOCX)
+- `backend/app/services/skill_analyzer.py` - Skill extraction and analysis
+- `backend/app/core/dependencies.py` - Authentication middleware and dependencies
 
 #### Key Responsibilities:
 - User authentication endpoints (Email & Google)
@@ -524,11 +1601,12 @@ git push origin varsha
 **Team:** Backend
 
 #### Your Files:
-- `backend/routes/progress.py` - Progress tracking endpoints
-- `backend/routes/analytics.py` - User analytics and statistics endpoints
-- `backend/services/progress_service.py` - Progress calculation and tracking logic
-- `backend/services/analytics_service.py` - Analytics aggregation logic
-- `backend/utils/helpers.py` - Helper functions and utilities
+- `backend/app/api/routes/progress.py` - Progress tracking endpoints
+- `backend/app/api/routes/admin.py` - Admin panel endpoints
+- `backend/app/services/progress_tracker.py` - Progress calculation and tracking logic
+- `backend/app/services/resource_recommender.py` - Resource recommendation logic
+- `backend/app/utils/helpers.py` - Helper functions and utilities
+- `backend/app/utils/validators.py` - Input validation utilities
 
 #### Key Responsibilities:
 - Progress tracking system
