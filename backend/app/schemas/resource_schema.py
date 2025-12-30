@@ -1,2 +1,5 @@
-﻿# Resource schemas
-# To be implemented
+﻿from pydantic import BaseModel
+from typing import List
+
+class ResourceRequest(BaseModel):
+    skills: List[str]

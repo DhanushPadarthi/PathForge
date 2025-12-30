@@ -17,18 +17,10 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifespan events"""
-    # Startup
-    logger.info("🚀 Starting PathForge API...")
-    await db.connect_db()
-    firebase_config.initialize()
-    logger.info("✅ Application started successfully")
+    # TEMPORARY: disable blocking startup tasks
+    print("⚠️ Startup checks skipped (dev mode)")
     yield
-    # Shutdown
-    logger.info("🛑 Shutting down PathForge API...")
-    await db.close_db()
-    logger.info("✅ Application shutdown complete")
-
+    print("🛑 Shutdown")
 # Initialize FastAPI app
 app = FastAPI(
     title=settings.APP_NAME,
@@ -47,13 +39,13 @@ app.add_middleware(
 )
 
 # Register routes
-app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
-app.include_router(resume.router, prefix="/api/resume", tags=["Resume"])
-app.include_router(skill_analysis.router, prefix="/api/skills", tags=["Skills"])
-app.include_router(roadmap.router, prefix="/api/roadmap", tags=["Roadmap"])
+#app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
+#app.include_router(resume.router, prefix="/api/resume", tags=["Resume"])
+#pp.include_router(skill_analysis.router, prefix="/api/skills", tags=["Skills"])
+#app.include_router(roadmap.router, prefix="/api/roadmap", tags=["Roadmap"])
 app.include_router(resources.router, prefix="/api/resources", tags=["Resources"])
-app.include_router(progress.router, prefix="/api/progress", tags=["Progress"])
-app.include_router(admin.router, prefix="/api/admin", tags=["Admin"])
+#app.include_router(progress.router, prefix="/api/progress", tags=["Progress"])
+#app.include_router(admin.router, prefix="/api/admin", tags=["Admin"])
 
 @app.get("/")
 async def root():
