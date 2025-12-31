@@ -1,11 +1,17 @@
-import React from 'react';
-
-const ProgressBar = ({ progress }) => {
+export default function ProgressBar({ value }) {
   return (
-    <div className="progress-bar">
-      <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+    <div style={{ background: "#ddd", borderRadius: 10 }}>
+      <div
+        style={{
+          width: `${value}%`,
+          background: "#4caf50",
+          padding: 8,
+          borderRadius: 10,
+          color: "#fff"
+        }}
+      >
+        {value}%
+      </div>
     </div>
-  );
-};
-
-export default ProgressBar;
+  )
+}
